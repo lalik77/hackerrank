@@ -1,4 +1,6 @@
- static long arrayManipulation(int n, int[][] queries) {
+ // It seems to be an O(n*m) algorythm
+
+static long arrayManipulation(int n, int[][] queries) {
 
         long l;
 
