@@ -1,0 +1,52 @@
+ // О(n+m) algorithm 
+//  Algorithm from alGOds and JavaAid on youtube
+//https://www.youtube.com/watch?v=JtJKn_c9lB4&list=LLsNK-brhBO7AnwrRfuR0Rbw&index=5&t=328s 
+//https://www.youtube.com/watch?v=hDhf04AJIRs
+
+static long arrayManipulation1(int n, int[][] queries) {
+
+        long  l = Long.MIN_VALUE;
+
+        long [] Arr = new long[n];
+
+
+        for (int i=0;i<queries.length;i++){ // Algorithm from alGOds and JavaAid on youtube
+
+            int a = queries[i][0];
+            int b = queries[i][1];
+            int k = queries[i][2];
+
+            Arr[a-1]=Arr[a-1]+k;
+            Arr[b]=Arr[b]-k;
+        }
+
+
+        for (int i=0;i<n;i++) {
+
+            System.out.println(Arr[i]);
+
+        }
+
+        for (int i = 1;i<Arr.length;i++) {
+
+            Arr[i]=Arr[i-1]+Arr[i];
+        }
+
+        System.out.println("After prefix summ algo");
+
+        for (int i=0;i<n;i++) {
+
+            System.out.println(Arr[i]);
+
+        }
+
+        Arrays.sort(Arr);
+
+        l=Arr[Arr.length-1];
+
+
+
+
+        return l;
+
+    }
